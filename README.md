@@ -117,4 +117,4 @@ bash compile_blind.sh
 
 ## 许可
 
-本模板基于原 Overleaf 模板修改，遵循原模板的许可协议。使用者可自由修改和分发，但需保留原作者的贡献声明。
+本项目基于原 Overleaf 模板修改，采用 [MIT License](LICENSE)。使用者可自由修改和分发，但需保留原作者的贡献声明。
