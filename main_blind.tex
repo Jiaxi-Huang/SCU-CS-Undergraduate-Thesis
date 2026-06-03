@@ -1,0 +1,107 @@
+%--------------------------------------------------------------------
+% 导言区（盲审版：隐去作者、导师等个人信息）
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[a4paper,UTF8]{ctexrep}
+
+\usepackage{scuthesis}				% 封面版式
+\usepackage{amssymb}  				% 设置数学公式
+\usepackage{amsmath} 				% 设置数学公式编号
+\usepackage{amsthm}					% 定理
+
+%\usepackage[all,cmtip]{xy}			% xy-pic	画交换图
+\usepackage{tikz}			        % tikz      绘图宏包
+\usepackage{float}	  				% float		为固定图片位置宏包
+\usepackage{subfigure}				% subfigure 引入宏包来添加多张图片
+\usepackage{caption}				% caption   为更改图片命名的宏包
+\usepackage{enumerate}				% enumerate 有序列表环境
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{booktabs}       % 专业三线表：\toprule, \midrule, \bottomrule
+\usepackage{tabularx}       % 自动调整列宽（推荐替代 \resizebox）
+\usepackage[table]{xcolor} % 支持表格着色
+\usepackage{multirow,multicol,makecell} % 合并单元格 & 表头换行
+\usepackage{siunitx}        % 数字按小数点对齐（S 列类型）
+\usepackage{threeparttable} % 表格注释/脚注
+\usepackage{array}          % 自定义列格式
+%\usepackage{boondox-cal}			% boondox-cal   数学花体
+%\usepackage{bm}       				% bm 			希腊字母加粗(普通字母类同)
+
+\theoremstyle{plain}
+	\newtheorem{thm}{定理~}[chapter]
+	\newtheorem{lem}[thm]{引理~}
+	\newtheorem{prop}[thm]{命题~}
+	\newtheorem{cor}[thm]{推论~}
+\theoremstyle{definition}
+	\newtheorem{defn}[thm]{定义~}
+	\newtheorem{conj}[thm]{猜想~}
+	\newtheorem{exmp}[thm]{例~}
+	\newtheorem{ques}[thm]{问题~}
+	\newtheorem{rem}[thm]{注~}
+
+%	该命令指定公式编号的格式
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+% 请在此处添加或修改你想要的定理样式，以下为英文定理样式，若使用中文写作请注释以下部分，并改用上面的中文定理样式（注意，使用英文写作时，若完成该操作后仍有部分单词显示为中文，请参照ctex文档第6节的"文档汉化"部分自行调整）：
+% \theoremstyle{plain}
+%   \newtheorem{thm}{Theorem}[chapter]
+%   \newtheorem{lem}[thm]{Lemma}
+%   \newtheorem{prop}[thm]{Proposition}
+%   \newtheorem{cor}[thm]{Corollary}
+% \theoremstyle{definition}
+%   \newtheorem{defn}[thm]{Definition}
+%   \newtheorem{conj}[thm]{Conjecture}
+%   \newtheorem{exmp}[thm]{Example}
+%   \newtheorem{ques}[thm]{Question}
+%   \newtheorem{rem}[thm]{Remark}
+% \ctexset{bibname = {References}}
+% \ctexset{proofname = {Proof}}
+% \ctexset{contentsname = {Contents}}
+
+\include{src/basic_info_blind} 			% 作者信息（盲审版）
+
+
+%-----------------------------------------------------------------
+% 正文区
+	\begin{document}
+	\zihao{-4}
+
+	% 封面
+	\include{src/cover}
+	% 摘要
+	\include{src/abstract}
+	% 目录
+	\include{src/tableofcontent}
+
+
+	% 正文
+	\clearpage
+	\pagenumbering{arabic}
+	\include{src/chap01}
+	\include{src/chap02}
+	\include{src/chap03}
+	\include{src/chap04}
+	\include{src/chap05}
+	\include{src/chap06}
+
+
+	% 后记（附录）
+	%\include{src/epilogue}
+
+
+	% 参考文献
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{参考文献}		% 在目录中添加参考文献
+	\bibliographystyle{unsrt}
+	\bibliography{ref/refs}
+
+	% 致谢（盲审版：不含个人姓名）
+	\clearpage
+	\addcontentsline{toc}{chapter}{致\hspace{0.8cm}谢}
+	\include{src/acknowledgement_blind}
+
+	% 盲审版不含声明和授权书
+
+\end{document}
