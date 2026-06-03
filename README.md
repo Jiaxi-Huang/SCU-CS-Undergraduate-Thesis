@@ -115,6 +115,10 @@ bash compile_blind.sh
 
 输出 PDF 位于 `.output/main.pdf`（盲审版为 `.output/main_blind.pdf`）。
 
+## 贡献
+
+学院每年可能会对论文格式提出新的要求，本模板难免有滞后或疏漏之处。如果你发现问题（如格式不符、编译错误等），或有改进建议，欢迎通过 [Issues](https://github.com/Jiaxi-Huang/SCU-CS-Undergraduate-Thesis/issues) 反馈，或直接提交 Pull Request。
+
 ## 许可
 
 本项目基于原 Overleaf 模板修改，采用 [MIT License](LICENSE)。使用者可自由修改和分发，但需保留原作者的贡献声明。
