@@ -75,7 +75,33 @@
 
 编辑 `src/declaration_ai.tex`，如实填写你在论文写作过程中使用 AI 工具的情况。
 
-### 5. 编译
+### 5. 导入签名
+
+`src/declaration.tex`（声明与授权书）和 `src/declaration_ai.tex`（AI 工具使用声明）中需要作者和导师签名。模板默认使用 `\rule{3cm}{1.2cm}` 生成占位横线框，你可以根据实际情况选择以下两种方式之一：
+
+**方式一：打印后手写签名（推荐）**
+
+保持 `\rule{3cm}{1.2cm}` 不变，编译 PDF 后打印声明页，由本人和导师在横线上手写签名，再扫描回 PDF 合并即可。此方式最符合学校要求。
+
+**方式二：嵌入签名图片**
+
+将手写签名扫描或拍照，保存为 JPG/PNG 图片（建议透明背景），放入 `images/` 目录，然后替换 `\rule` 为 `\includegraphics`：
+
+1. 将签名图片放入 `images/` 目录，例如命名为 `writer_sign.jpg` 和 `supervisor_sign.jpg`
+
+2. 在 `src/declaration.tex` 和 `src/declaration_ai.tex` 中，将：
+   ```latex
+   作者签名：\rule{3cm}{1.2cm}
+   ```
+   替换为：
+   ```latex
+   作者签名：\includegraphics[height=1.2cm]{images/writer_sign.jpg}
+   ```
+   导师签名同理替换。
+
+注意：`declaration.tex` 和 `declaration_ai.tex` 各有一处作者签名和一处导师签名，共需替换 4 处。
+
+### 6. 编译
 
 ```bash
 # 正常版
